@@ -9,12 +9,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Checkable;
+import android.widget.Toast;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView textViewOrderList;
     private final String defaultStringForPreferenceFile = "Nothing to retrieve";
@@ -25,6 +31,15 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
         textViewOrderList = findViewById(R.id.textView_orderList);
+        Spinner spinnerContactType = findViewById(R.id.spinner_contactType);
+        if (spinnerContactType != null) {
+            ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this, R.array.contact_numbers, android.R.layout.simple_spinner_item);
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            spinnerContactType.setAdapter(arrayAdapter);
+
+            spinnerContactType.setOnItemSelectedListener(this);
+        }
 
         String previousOrder = retrieveFromPreferenceFile();
         if (previousOrder.equals(defaultStringForPreferenceFile)) {
@@ -51,6 +66,8 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void displayOrders(String orders) { textViewOrderList.setText(orders); }
+
+    private void toastMessage(String message) { Toast.makeText(this, message, Toast.LENGTH_SHORT).show(); }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -80,4 +97,36 @@ public class OrderActivity extends AppCompatActivity {
 
         textViewOrderList.setText("");
     }
+
+    public void onDeliveryMethodChosen(View view) {
+        RadioButton radioButton = (RadioButton)view;
+        boolean isChecked = radioButton.isChecked();
+
+            switch (view.getId()) {
+                case R.id.radioButton_firstDeliOption :
+                    if (isChecked)
+                        toastMessage(getString(R.string.radioButton_firstDeliOption));
+                    break;
+                case R.id.radioButton_secondDeliOption:
+                    if (isChecked)
+                        toastMessage(getString(R.string.radioButton_secondDeliOption));
+                    break;
+                case R.id.radioButton_thirdDeliOption:
+                    if (isChecked)
+                        toastMessage(getString(R.string.radioButton_thirdDeliOption));
+                    break;
+            }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0) {
+            return;
+        }
+        String numberType = parent.getItemAtPosition(position).toString();
+        toastMessage(numberType);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) { }
 }

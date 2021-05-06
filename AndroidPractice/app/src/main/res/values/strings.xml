@@ -17,4 +17,23 @@
     <string name="order_message_iceCream">IceCream is ordered successfully</string>
     <string name="order_message_froyo">Froyo is ordered successfully</string>
     <string name="textView_orderList">Order List</string>
+    <string name="textView_name">Name</string>
+    <string name="editText_nameHint">Enter name</string>
+    <string name="textView_address">Address</string>
+    <string name="editText_address">Enter address</string>
+    <string name="textView_phoneNumber">Contact</string>
+    <string name="editText_phoneNumber">Enter contact</string>
+    <string name="textView_note">Note</string>
+    <string name="editText_note">Enter note</string>
+    <string name="textView_deliveryMethod">Choose a delivery option</string>
+    <string name="radioButton_firstDeliOption">Same day messenger service</string>
+    <string name="radioButton_secondDeliOption">Next day ground delivery</string>
+    <string name="radioButton_thirdDeliOption">Pick up</string>
+    <string-array name="contact_numbers">
+        <item>Type</item>
+        <item>Mobile</item>
+        <item>Home</item>
+        <item>Work</item>
+        <item>Other</item>
+    </string-array>
 </resources>

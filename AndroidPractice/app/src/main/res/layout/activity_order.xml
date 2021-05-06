@@ -27,13 +27,169 @@
         android:maxLines="20"
         android:minLines="1" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:layout_marginEnd="@dimen/margin_orderDetail"
+        android:layout_marginRight="@dimen/margin_orderDetail"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_name"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editText_customerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:ems="10"
+            android:hint="@string/editText_nameHint"
+            android:inputType="textPersonName"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:layout_marginEnd="@dimen/margin_orderDetail"
+        android:layout_marginRight="@dimen/margin_orderDetail"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_address"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editText_customerAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:ems="10"
+            android:hint="@string/editText_address"
+            android:inputType="textMultiLine"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:layout_marginEnd="@dimen/margin_orderDetail"
+        android:layout_marginRight="@dimen/margin_orderDetail"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_phoneNumber"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editText_customerPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:ems="10"
+            android:hint="@string/editText_phoneNumber"
+            android:inputType="phone"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_contactType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:layout_marginEnd="@dimen/margin_orderDetail"
+        android:layout_marginRight="@dimen/margin_orderDetail"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_note"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editText_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:ems="10"
+            android:hint="@string/editText_note"
+            android:inputType="textMultiLine|textCapSentences"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:layout_marginTop="15dp"
+        android:text="@string/textView_deliveryMethod"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_orderDetail"
+        android:layout_marginLeft="@dimen/margin_orderDetail"
+        android:checkedButton="@id/radioButton_firstDeliOption">
+
+        <RadioButton
+            android:id="@+id/radioButton_firstDeliOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeliveryMethodChosen"
+            android:text="@string/radioButton_firstDeliOption" />
+
+        <RadioButton
+            android:id="@+id/radioButton_secondDeliOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeliveryMethodChosen"
+            android:text="@string/radioButton_secondDeliOption" />
+
+        <RadioButton
+            android:id="@+id/radioButton_thirdDeliOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeliveryMethodChosen"
+            android:text="@string/radioButton_thirdDeliOption" />
+    </RadioGroup>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_refresh_shopping_list"
-        android:onClick="clearOrderList"/>
+        android:onClick="clearOrderList"
+        app:srcCompat="@drawable/ic_refresh_shopping_list" />
 
 </LinearLayout>
