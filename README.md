@@ -16,7 +16,7 @@ With **Spinner** we can select one item from a set easily. For example, when we 
    ```
    > In above methods, 2 layout resources must be provided for spinner's appearance. Android provides predefined layouts in **android.R.layout** class for them, unless we make our own customized layout. 
    
-   After creation of an adapter with the content, set this adapter as the `Adapter` of spinner view throguh `setAdapter(Adapter T)` in AdapterView class. `Spinner` class inherits from `AbsSpinner` class which again, inherits from `AdapterView`.
+   After creation of an adapter with the content, set this adapter as the `Adapter` of spinner view throguh `setAdapter(Adapter T)` in AdapterView class. The `Spinner` class inherits from `AbsSpinner` class which again, inherits from `AdapterView`.
    
  - To respond to user selection, use `onItemSelected(..)` method defined in `OnItemSelectedListener` interface. This interface is inside `Adapterview` class.
    ```
