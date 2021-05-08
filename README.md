@@ -7,7 +7,7 @@ Controlling user inputs with spinner and radio button.
 With **Spinner** we can select one item from a set easily. For example, when we need users to provide contact information, we can put spinner so users can specify whether it's contact of home, mobile or work etc. 
 
 ## Related methods
- - Spinner needs an `Adapter` object to assign an array to the spinner. Like an adapter in the real world, it connects the desired data to the spinner. For spinner we use `ArrayAdapter` class.
+ - Spinner needs an `Adapter` object to assign an array to itself. Like an adapter in the real world, it connects the desired data to the spinner. For spinner we use `ArrayAdapter` class.
    ```
    public class ArrayAdapter .. {
        public static ArrayAdapter createFromResource( .., int textArrayResId, .. ) { .. }
